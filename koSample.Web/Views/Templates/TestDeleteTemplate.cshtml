@@ -1,0 +1,20 @@
+﻿<script type="text/html" id="testDeleteTemplate">
+    <div class="pane fixed" data-bind="visible:paneVisible" style="display:none;">
+        <div class="pane-out"></div>
+        <div class="pane-in">
+            <div class="pane-in-head"><span data-bind="text:__Title"></span></div>
+            <div class="pane-in-body">
+                <div class="form-group">
+                    <label class="control-label">Are you sure to delete <span data-bind="text:Title"></span> ?</label>
+                </div>
+            </div>
+            <div class="pane-in-foot">
+                <a href="javascript:;" class="btn" data-bind="click:submit">OK</a>
+                <a href="javascript:;" class="btn" data-bind="click:close">Cancel</a>
+            </div>
+            <div class="pane-in-cover" data-bind="visible:loading">
+                <i class="fa fa-spin fa-circle-o-notch loading"></i>
+            </div>
+        </div>
+    </div>
+</script>

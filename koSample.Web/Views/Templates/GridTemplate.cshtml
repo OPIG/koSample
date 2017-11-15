@@ -1,0 +1,25 @@
+﻿<script type="text/html" id="gridTemplate">
+    <table class="table table-bordered">
+        <thead>
+            <tr data-bind="foreach:columns">
+                <!-- ko if: visible -->
+                <th data-bind="text:headerText"></th>
+                <!-- /ko -->
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:{data:data,as:'row'}">
+            <tr data-bind="foreach:{data:$parent.columns,as:'col'},click:$parent.select,css:{selected:$parent.isSelected(row)}">
+                <!-- ko ifnot: isCommand -->
+                <!-- ko if: visible -->
+                <td data-bind="text:row[col.name]"></td>
+                <!-- /ko -->
+                <!-- /ko -->
+                <!-- ko if: isCommand -->
+                <td data-bind="foreach:commands">
+                    <a href="javascript:;" data-bind="text:text,click:function(){click(row);}"></a>
+                </td>
+                <!-- /ko -->
+            </tr>
+        </tbody>
+    </table>
+</script>

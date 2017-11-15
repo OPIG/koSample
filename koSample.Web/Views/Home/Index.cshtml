@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    Html.RenderPartial("~/Views/Templates/TestAddEditTemplate.cshtml");
+    Html.RenderPartial("~/Views/Templates/TestDeleteTemplate.cshtml");
+    Html.RenderPartial("~/Views/Templates/GridTemplate.cshtml");
+}
+<div data-bind="template:{name:'gridTemplate', data:gridData}" class="table-responsive pane"></div>
+<div data-bind="template:{name:'testAddEditTemplate', data:testAddEditPane}"></div>
+<div data-bind="template:{name:'testDeleteTemplate', data:testDeletePane}"></div>
+@section header{
+    <ul class="command">
+        <li><a href="javascript:;" data-bind="click: Add"><i class="glyphicon glyphicon-plus"></i> Add</a></li>
+        <li><a href="javascript:;" data-bind="click: Init"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
+    </ul>
+}
+@section scripts{
+    <script>
+        require(["/scripts/ViewModels/homeindex.js"]);
+    </script>
+}
